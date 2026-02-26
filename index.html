@@ -8,6 +8,32 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="container">
+    <main class="timer-card">
+      
+      <div class="timer-display">
+        <svg class="progress-ring" width="300" height="300">
+          <circle class="progress-ring__background" stroke-width="8" fill="transparent" r="135" cx="150" cy="150"/>
+          <circle class="progress-ring__circle" stroke-width="8" fill="transparent" r="135" cx="150" cy="150" id="progressCircle"/>
+        </svg>
+        
+        <div class="time-text">
+          <span id="minutes">25</span>:<span id="seconds">00</span>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="startBtn" class="control-btn neumorphic-btn">START</button>
+        <button id="resetBtn" class="control-btn neumorphic-btn">RESET</button>
+      </div>
+
+      <div class="mode-switch">
+        <button id="workBtn" class="mode-btn active">集中</button>
+        <button id="breakBtn" class="mode-btn">休憩</button>
+      </div>
+
+    </main>
+  </div>
   
   <script src="script.js"></script>
 </body>
