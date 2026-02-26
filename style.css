@@ -1,1 +1,119 @@
 @charset "UTF=8";
+
+/* 1. 全体のリセットと背景色 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #ebecf0; /* ニューモーフィズムに最適な薄いグレー */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* 2. メインカード（外側に浮かび上がる影） */
+.timer-card {
+  background-color: #ebecf0;
+  padding: 50px;
+  border-radius: 50px;
+  box-shadow: 20px 20px 60px #c8c9cc, 
+             -20px -20px 60px #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+/* 3. タイマー表示エリア（内側に窪む影） */
+.timer-display {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: inset 6px 6px 12px #c8c9cc, 
+             inset -6px -6px 12px #ffffff;
+}
+
+/* 4. 円形プログレスバーの設定 */
+.progress-ring {
+  position: absolute;
+  transform: rotate(-90deg); /* 12時の位置から開始させる */
+}
+
+.progress-ring__background {
+  stroke: #e0e0e0;
+}
+
+.progress-ring__circle {
+  stroke: #6366f1; /* 鮮やかなインディゴブルー */
+  stroke-linecap: round; /* 線の端を丸くする */
+  transition: stroke-dashoffset 0.3s;
+}
+
+/* 5. 中央のテキスト表示 */
+.time-text {
+  font-size: 48px;
+  font-weight: bold;
+  color: #444;
+  letter-spacing: 2px;
+}
+
+/* 6. ニューモーフィズム・ボタン */
+.controls {
+  display: flex;
+  gap: 20px;
+}
+
+.neumorphic-btn {
+  width: 100px;
+  height: 45px;
+  border: none;
+  border-radius: 10px;
+  background-color: #ebecf0;
+  color: #666;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 6px 6px 12px #c8c9cc, 
+             -6px -6px 12px #ffffff;
+  transition: 0.2s;
+}
+
+.neumorphic-btn:active {
+  box-shadow: inset 4px 4px 8px #c8c9cc, 
+             inset -4px -4px 8px #ffffff;
+  transform: scale(0.98);
+}
+
+/* 7. モード切替スイッチ */
+.mode-switch {
+  display: flex;
+  background-color: #ebecf0;
+  padding: 5px;
+  border-radius: 15px;
+  box-shadow: inset 4px 4px 8px #c8c9cc, 
+             inset -4px -4px 8px #ffffff;
+}
+
+.mode-btn {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: #888;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.mode-btn.active {
+  background-color: #6366f1;
+  color: white;
+  box-shadow: 4px 4px 8px rgba(99, 102, 241, 0.3);
+}
